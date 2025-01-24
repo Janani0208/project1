@@ -1,0 +1,27 @@
+public class SymmetricMatrixChecker {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2},
+            {2, 4},
+    
+        };
+        boolean isSymmetric = isSymmetricMatrix(matrix);
+        System.out.println("Is Symmetric Matrix: " + isSymmetric);
+    }
+    public static boolean isSymmetricMatrix(int[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix.length;
+        if (rows != cols) {
+            return false;
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] != matrix[j][i]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
